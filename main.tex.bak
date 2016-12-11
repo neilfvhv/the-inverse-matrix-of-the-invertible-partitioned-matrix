@@ -1,0 +1,212 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\title{The Inverse Matrix of the Invertible Partitioned Matrix}
+\author{neil2hw}
+\date{May 2016}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+
+\begin{document}
+
+\maketitle
+
+\section{Lemma}
+
+    \begin{lemma}
+        If matrix A and D are invertible, the partitioned matrix
+        $$
+            T =
+            \begin{pmatrix}
+                A & 0 \\
+                0 & D
+            \end{pmatrix}
+        $$
+        is invertible, and the inverse matrix is
+        $$
+            T^{-1} =
+            \begin{pmatrix}
+                A^{-1} & 0 \\
+                0 & D^{-1}
+            \end{pmatrix}
+        $$
+    \end{lemma}
+
+    \begin{lemma}
+        If matrix B and C are invertible, the partitioned matrix
+        $$
+            T =
+            \begin{pmatrix}
+                0 & B \\
+                C & 0
+            \end{pmatrix}
+        $$
+        is invertible, and its inverse matrix is
+        $$
+            T^{-1} =
+            \begin{pmatrix}
+                0 & C^{-1} \\
+                B^{-1} & 0
+            \end{pmatrix}
+        $$
+    \end{lemma}
+
+\section{Theorem}
+
+    \begin{theorem}
+        If matrix A and D are invertible, the partitioned matrix
+        $$
+            T =
+            \begin{pmatrix}
+                A & B \\
+                0 & D
+            \end{pmatrix}
+        $$
+        is invertible, and its inverse matrix is
+        $$
+            T^{-1} =
+            \begin{pmatrix}
+                A^{-1} & -A^{-1} B D^{-1} \\
+                0 & D^{-1}
+            \end{pmatrix}
+        $$
+    \end{theorem}
+
+    \begin{theorem}
+        If matrix A and D are invertible, the partitioned matrix
+        $$
+            T =
+            \begin{pmatrix}
+                A & 0 \\
+                C & D
+            \end{pmatrix}
+        $$
+        is invertible, and its inverse matrix is
+        $$
+            T^{-1} =
+            \begin{pmatrix}
+                A^{-1} & 0 \\
+                -D^{-1} C A^{-1} & D^{-1}
+            \end{pmatrix}
+        $$
+    \end{theorem}
+
+    \begin{theorem}
+        If matrix B and C are invertible, the partitioned matrix
+        $$
+            T =
+            \begin{pmatrix}
+                A & B \\
+                C & 0
+            \end{pmatrix}
+        $$
+        is invertible, and its inverse matrix is
+        $$
+            T^{-1} =
+            \begin{pmatrix}
+                0 & C^{-1} \\
+                B^{-1} & -B^{-1} A C^{-1}
+            \end{pmatrix}
+        $$
+    \end{theorem}
+
+    \begin{theorem}
+        If matrix B and C are invertible, the partitioned matrix
+        $$
+            T =
+            \begin{pmatrix}
+                0 & B \\
+                C & D
+            \end{pmatrix}
+        $$
+        is invertible, and its inverse matrix is
+        $$
+            T^{-1} =
+            \begin{pmatrix}
+                -C^{-1} D B^{-1} & C^{-1} \\
+                B^{-1}  & 0
+            \end{pmatrix}
+        $$
+    \end{theorem}
+
+\section{Corollary}
+
+    \begin{corollary}
+        If matrix
+        $$
+            T =
+            \begin{pmatrix}
+                A & B \\
+                C & D
+            \end{pmatrix}
+        $$
+        and the matrix A are invertible, the inverse matrix of T is
+        $$
+            T^{-1} =
+            \begin{pmatrix}
+                A^{-1} + A^{-1} B (D - C A^{-1} B)^{-1} C A^{-1} & -A^{-1} B (D - C A^{-1} B)^{-1} \\
+                -(D - C A^{-1} B)^{-1} C A^{-1} & (D - C A^{-1} B)^{-1}
+            \end{pmatrix}
+        $$
+    \end{corollary}
+
+    \begin{corollary}
+        If matrix
+        $$
+            T =
+            \begin{pmatrix}
+                A & B \\
+                C & D
+            \end{pmatrix}
+        $$
+        and the matrix B are invertible, the inverse matrix of T is
+        $$
+            T^{-1} =
+            \begin{pmatrix}
+                -(C - D B^{-1} A)^{-1} D B^{-1} & (C - D B^{-1} A)^{-1} \\
+                B^{-1} + B^{-1} A (C - D B^{-1} A)^{-1} D B^{-1} & -B^{-1} A (C - D B^{-1} A)^{-1}
+            \end{pmatrix}
+        $$
+    \end{corollary}
+
+    \begin{corollary}
+         If matrix
+        $$
+            T =
+            \begin{pmatrix}
+                A & B \\
+                C & D
+            \end{pmatrix}
+        $$
+        and the matrix C are invertible, the inverse matrix of T is
+        $$
+            T^{-1} =
+            \begin{pmatrix}
+                -C^{-1} D (B - A C^{-1} D)^{-1} & C^{-1} + C^{-1} D (B - A C^{-1} D)^{-1} A C^{-1} \\
+                (B - A C^{-1} D)^{-1} & -(B - A C^{-1} D)^{-1} A C^{-1}
+            \end{pmatrix}
+        $$
+    \end{corollary}
+
+    \begin{corollary}
+         If matrix
+        $$
+            T =
+            \begin{pmatrix}
+                A & B \\
+                C & D
+            \end{pmatrix}
+        $$
+        and the matrix D are invertible, the inverse matrix of T is
+        $$
+            T^{-1} =
+            \begin{pmatrix}
+                (A - B D^{-1} C)^{-1} & -(A - B D^{-1} C)^{-1} B D^{-1} \\
+                -D^{-1} C (A - B D^{-1} C)^{-1} & D^{-1} + D^{-1} C (A - B D^{-1} C)^{-1} B D^{-1}
+            \end{pmatrix}
+        $$
+    \end{corollary}
+
+\end{document}
